@@ -150,10 +150,25 @@ footer{padding:35px 0;background:#07111f;color:white}.foot{display:flex;justify-
 .book-title{margin-top:16px;font-size:14.5px;font-weight:800;line-height:1.45;max-width:190px;letter-spacing:-.01em;min-height:2.9em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .book-meta{font-size:12.5px;color:var(--muted);margin-top:5px;max-width:190px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .shelf-base{height:16px;background:linear-gradient(180deg,#caa06a,#8a6437);border-radius:5px;margin-top:28px;box-shadow:0 14px 20px rgba(0,0,0,.18)}
-@media(max-width:760px){.shelf-row{gap:26px}.book,.book-cover{width:140px}.book-cover{height:187px}}
+@media(max-width:760px){.shelf-row{gap:20px 16px;flex-wrap:wrap;justify-content:center;overflow-x:visible}.book,.book-cover{width:140px}.book{flex:0 0 140px}.book-cover{height:187px}}
 .doc-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.doc-pick button{text-align:left;border:1px solid var(--line);background:white;border-radius:16px;padding:18px}.doc-pick h4{margin:0 0 6px;font-size:14px}.doc-pick p{margin:0;font-size:11px;color:var(--muted)}
 @media(max-width:1000px){.hero-grid{grid-template-columns:1fr}.hero-visual{display:none}.stats{grid-template-columns:repeat(3,1fr)}.rc-grid,.why-grid,.benefit-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}.record-grid,.pp-grid,.ready-grid,.withsk-grid,.impact-grid,.proof-row,.form-grid,.doc-pick{grid-template-columns:1fr 1fr}.case-stats{grid-template-columns:repeat(2,1fr)}.cat-cols{grid-template-columns:1fr}}
-@media(max-width:760px){.navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 20px;flex-direction:column;border-bottom:1px solid var(--line);max-height:70vh;overflow:auto}.navlinks button{text-align:left}.hero{min-height:620px}.hero h1{font-size:48px}.dbl{grid-template-columns:1fr}.section{padding:64px 0}.stats,.form-grid{grid-template-columns:1fr 1fr}.rc-grid,.record-grid,.pp-grid,.ready-grid,.bridge,.why-grid,.benefit-grid,.trust-grid,.withsk-grid,.impact-grid,.proof-row,.gal,.doc-pick{grid-template-columns:1fr}.wrap{padding:0 20px}.foot{flex-direction:column}.formcard{padding:24px}.catcard{padding:24px}}
+@media(max-width:760px){.navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 20px;flex-direction:column;border-bottom:1px solid var(--line);max-height:70vh;overflow:auto}.navlinks button{text-align:left}.hero{min-height:620px}.hero h1{font-size:48px}.dbl{grid-template-columns:1fr}.section{padding:64px 0}.stats,.form-grid{grid-template-columns:1fr 1fr}.rc-grid,.record-grid,.pp-grid,.ready-grid,.bridge,.why-grid,.benefit-grid,.trust-grid,.withsk-grid,.impact-grid,.proof-row,.gal,.doc-pick{grid-template-columns:1fr}.wrap{padding:0 20px}.foot{flex-direction:column}.formcard{padding:24px}.catcard{padding:24px}.modal-bg{padding:24px 10px}.modal{padding:20px}.reader-page .pg-no{font-size:9px;padding:3px 7px;right:8px;bottom:8px}}
+@media (orientation:landscape) and (max-height:500px){
+ .navlinks{display:none}.menu{display:block}
+ .brand{font-size:15px;gap:8px}
+ .hero{min-height:0;padding:32px 0}
+ .hero h1{font-size:30px;margin:14px 0}
+ .hero p{font-size:14px}
+ .section{padding:32px 0}
+ .section h2{font-size:22px}
+ .eyebrow{font-size:12px}
+ .catcard{padding:20px 22px}
+ .catcard h4{font-size:16px;margin-bottom:14px}
+ .cat-cols{gap:14px;margin-bottom:14px}
+ .cat-cols h5{font-size:13px}
+ .cat-cols p{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -571,7 +586,7 @@ $('#shelfRow').addEventListener('click',e=>{const b=e.target.closest('.book'); i
 /* 로컬 더블클릭이든 깃허브 배포든 항상 똑같이 재생되도록 영상 파일을 직접 내장(assets/photos/ph302.mp4) */
 $('#wvVideo').addEventListener('click',()=>{
  $('#wvVideo').innerHTML='<video controls autoplay playsinline src="'+ph('ph302')+'"></video>';
-});
+},{once:true});
 
 /* ---------- nav / modal ---------- */
 $('#close').onclick=()=>$('#modalBg').classList.remove('show');
