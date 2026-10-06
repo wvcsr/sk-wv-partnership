@@ -189,8 +189,6 @@ footer{padding:35px 0;background:#07111f;color:white}.foot{display:flex;justify-
 .cp-photo .cp-photo-frame{aspect-ratio:4/3;overflow:hidden;display:block}
 .cp-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .cp-photo figcaption{font-size:12px;color:var(--muted);padding:8px 10px;line-height:1.55;text-align:center}
-.cp-illust .cp-photo-frame{background:#fff3ea;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.cp-illust .cp-photo-frame img{object-fit:cover}
 .cp-photo-empty{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px dashed var(--line);color:var(--muted)}
 .cp-photo-empty span{font-size:22px}
 .cp-photo-empty figcaption{font-size:12px;padding:0 14px;text-align:center}
@@ -290,8 +288,9 @@ section,header.hero{scroll-margin-top:80px}
 .builder-step{position:relative;margin-bottom:36px}
 .builder-step-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
 .builder-badge{flex:0 0 auto;background:linear-gradient(120deg,#ea0029,#ff5b24);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:.08em;padding:6px 12px;border-radius:999px;margin-top:2px}
-.builder-step-head h3{color:var(--ink);font-size:21px;margin:0 0 4px;letter-spacing:-.01em}
-.builder-step-head p{color:var(--muted);font-size:13px;margin:0}
+.builder-step-head h3{color:var(--ink);font-size:21px;margin:0 0 6px;letter-spacing:-.01em}
+.builder-step-head h3 .head-note{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:6px}
+.builder-step-head p{color:#4b5262;font-size:15px;line-height:1.6;font-weight:500;margin:0}
 .builder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .builder-grid.capabilities{grid-template-columns:repeat(4,1fr)}
 .builder-grid.regions{grid-template-columns:repeat(2,1fr);max-width:640px}
@@ -526,39 +525,33 @@ section,header.hero{scroll-margin-top:80px}
 
   <div class="builder" id="builder">
    <div class="builder-step" data-step="1">
-    <div class="builder-step-head"><span class="builder-badge">STEP 01</span><div><h3>소속 SK 멤버사</h3><p>하나를 선택해주세요. 선택하신 멤버사명이 컨셉페이퍼에 반영됩니다.</p></div></div>
+    <div class="builder-step-head"><span class="builder-badge">STEP 01</span><div><h3>소속 SK 멤버사를 선택해주세요 <small class="head-note">(멤버사명은 가나다순으로 정렬되어 있습니다)</small></h3><p>하나를 선택해주세요. 선택하신 멤버사명이 컨셉페이퍼에 반영됩니다.</p></div></div>
     <div class="builder-grid companies" id="companyGrid"></div>
-    <p class="builder-note">(멤버사명은 가나다순으로 정렬되어 있습니다)</p>
    </div>
 
    <div class="builder-step" data-step="2">
-    <div class="builder-step-head"><span class="builder-badge">STEP 02</span><div><h3>희망 사업 지역</h3><p>국내, 국제 또는 둘 다 선택할 수 있습니다.</p></div></div>
+    <div class="builder-step-head"><span class="builder-badge">STEP 02</span><div><h3>희망 사업 지역을 선택해주세요</h3><p>국내, 국제 또는 둘 다 선택할 수 있습니다.</p></div></div>
     <div class="builder-grid regions" id="regionGrid"></div>
    </div>
 
    <div class="builder-step" data-step="3">
-    <div class="builder-step-head"><span class="builder-badge">STEP 03</span><div><h3>해결하고 싶은 사회문제</h3><p>하나 또는 여러 개를 선택할 수 있습니다.</p></div></div>
+    <div class="builder-step-head"><span class="builder-badge">STEP 03</span><div><h3>해결하고 싶은 사회문제를 선택해주세요</h3><p>하나 또는 여러 개를 선택할 수 있습니다.</p></div></div>
     <div class="builder-grid issues" id="issueGrid"></div>
    </div>
 
    <div class="builder-step" data-step="4">
-    <div class="builder-step-head"><span class="builder-badge">STEP 04</span><div><h3>선호하는 사업구조</h3><p>하나 또는 여러 개를 선택할 수 있습니다.</p></div></div>
+    <div class="builder-step-head"><span class="builder-badge">STEP 04</span><div><h3>선호하는 협업구조를 선택해주세요</h3><p>하나 또는 여러 개를 선택할 수 있습니다.</p></div></div>
     <div class="builder-grid structures" id="structureGrid"></div>
    </div>
 
    <div class="builder-step" data-step="5">
-    <div class="builder-step-head"><span class="builder-badge">STEP 05</span><div><h3>집중하고 싶은 임팩트 성과 지표</h3><p>CSR 성과 보고 시 중요하게 볼 지표를 하나 또는 여러 개 선택할 수 있습니다.</p></div></div>
-    <div class="builder-grid capabilities" id="capGrid"></div>
-   </div>
-
-   <div class="builder-step" data-step="6">
-    <div class="builder-step-head"><span class="builder-badge">STEP 06</span><div><h3>추가 요청사항</h3><p>선택 입력사항입니다. 구체적으로 적어주실수록 더 정교한 협력사업을 제안드릴 수 있습니다.</p></div></div>
+    <div class="builder-step-head"><span class="builder-badge">STEP 05</span><div><h3>추가 요청사항을 입력해주세요</h3><p>선택 입력사항입니다. 구체적으로 적어주실수록 더 정교한 협력사업을 제안드릴 수 있습니다.</p></div></div>
     <textarea class="builder-textarea" id="directInput" placeholder="예: 긴급구호 분야 협력을 검토 중입니다 / 특정 지역·사업장 인근 협력을 우선하고 싶습니다 등"></textarea>
    </div>
 
    <div class="builder-mobile-nav" id="builderMobileNav">
     <button type="button" id="builderPrev" disabled>← 이전</button>
-    <span id="builderProgress">1 / 6</span>
+    <span id="builderProgress">1 / 5</span>
     <button type="button" id="builderNext">다음 →</button>
    </div>
 
@@ -820,9 +813,9 @@ const BUILDER_ISSUES = [
    보일 수 있어, 대신 "어떤 방식으로 함께할 것인가(사업구조)"를 묻는다.
    WHERE(사회문제) → HOW(사업구조) → WHY(성과지표) 3단 구조로 겹침 없이 설계. */
 const BUILDER_STRUCTURES = [
- {code:'FUND', icon:'💰', label:'사업비 후원형', keywords:'재원 지원 중심 · 실행은 월드비전이 총괄'},
+ {code:'FUND', icon:'💰', label:'월드비전 캠페인 참여형', keywords:'재원 지원 중심 · 실행은 월드비전이 총괄'},
  {code:'TECH', icon:'🔧', label:'기술·자산 결합형', keywords:'장비·플랫폼·데이터 등 보유 자산 결합'},
- {code:'EMPLOYEE', icon:'🙋', label:'임직원 참여형', keywords:'봉사 · 재능기부 · 참여형 프로그램'},
+ {code:'EMPLOYEE', icon:'🙋', label:'임직원 참여형', keywords:'자원활동 · 재능기부 · 참여형 프로그램'},
  {code:'CODESIGN', icon:'🧩', label:'공동기획형', keywords:'처음부터 함께 설계하는 신규 사업'},
  {code:'SCALEUP', icon:'📈', label:'검증사업 확장형', keywords:'이미 검증된 모델을 더 크게'},
  {code:'GLOBAL', icon:'🌐', label:'글로벌 네트워크 연계형', keywords:'국제 사업장 · 글로벌 네트워크 연계'},
@@ -1222,32 +1215,6 @@ const COLLAB_BUSINESS = [
  },
 ];
 
-/* 컨셉페이퍼 "참고 사진"에 연관 사진이 없을 때 쓰는 일러스트형 이미지 — 월드비전 공식 Sector Icons(흰색)를 브랜드 배경 위에 얹는다 */
-const ILLUST = {
- hynix_forest:[['climate','도시숲·그린카본'],['urban','도심 녹지']],
- hynix_lunchbox:[['nutrition','AI 영양 도시락'],['food','취약계층 식생활 지원']],
- sk_innovation:[['health','난치병 아동 치료비 지원'],['youth','청소년 꿈지원']],
- ecoplant_ocean:[['water','해양 환경 보전'],['education','해양환경 교육']],
- dream_support:[['education','꿈 설계·꿈지원금'],['youth','멘토링과 성장']],
- crisis_child_support:[['child-protection','위기아동 긴급지원'],['health','심리·정서 지원']],
- meal_support:[['food','결식 공백 지원'],['nutrition','영양 균형 식단']],
- independence_youth:[['youth','자립준비청년'],['livelihoods','자립 기반 마련']],
- child_friendly_infra:[['child-wellbeing','아동친화 공간'],['education','도서·학습 환경']],
- climate_concept:[['climate','그린카본·블루카본'],['water','갯벌·수자원 보전']],
- overseas_climate:[['climate','기후변화 대응'],['livelihoods','지역 생계 회복력']],
- overseas_health:[['health','보건영양 지원'],['nutrition','영양 개선']],
- overseas_wash:[['water','식수위생'],['health','위생 환경 개선']],
- overseas_education:[['education','교육환경 개선'],['child-wellbeing','아동 학습권']],
- overseas_child_protection:[['gender-equality','여아 보호·성평등'],['child-protection','아동보호']],
- overseas_livelihood:[['livelihoods','청소년 취업역량'],['microfinance','소득 창출']],
- emergency_concept:[['emergency','긴급구호'],['disasters','재난 대응']],
- supply_chain_concept:[['accountability','공급망 책임경영'],['partnerships','현지 협력체계']],
-};
-function illustCard(item,i){
- const [icon,label]=(ILLUST[item.id]||[['child-wellbeing','아동 지원'],['partnerships','협력']])[i];
- return `<figure class="cp-photo cp-illust ${i%2?'v2':'v1'}"><span class="cp-photo-frame"><img src="assets/illust/scene-${icon}.svg" alt=""></span><figcaption>${esc(label)} 일러스트 이미지</figcaption></figure>`;
-}
-
 const STATUS_LABEL = {READY:'바로 검토 가능', SCALE_UP:'확대 검토 가능', CO_DESIGN:'공동기획 필요', PILOT:'파일럿 설계 필요', PREP:'신규 사업 준비 중'};
 
 /* 참고자료 서재 데이터.
@@ -1318,7 +1285,7 @@ const CODESIGN_IDEAS = {
 };
 
 (function(){
- const companySel = new Set(), regionSel = new Set(), issueSel = new Set(), structSel = new Set(), capSel = new Set();
+ const companySel = new Set(), regionSel = new Set(), issueSel = new Set(), structSel = new Set();
  let currentMobileStep = 1;
  let lastResults = [];
 
@@ -1334,7 +1301,6 @@ const CODESIGN_IDEAS = {
  $('#regionGrid').innerHTML = BUILDER_REGIONS.map(i=>cardHTML(i,'region')).join('');
  $('#issueGrid').innerHTML = BUILDER_ISSUES.map(i=>cardHTML(i,'issue')).join('');
  $('#structureGrid').innerHTML = BUILDER_STRUCTURES.map(i=>cardHTML(i,'struct')).join('');
- $('#capGrid').innerHTML = BUILDER_CAPS.map(i=>cardHTML(i,'cap')).join('');
 
  function toggle(set, code, el){
   if(set.has(code)){ set.delete(code); el.classList.remove('selected'); }
@@ -1351,21 +1317,21 @@ const CODESIGN_IDEAS = {
  document.querySelectorAll('#companyGrid .b-card').forEach(el=>{
   el.addEventListener('click',()=> selectSingle(companySel, el.dataset.code, el));
  });
- document.querySelectorAll('#regionGrid .b-card, #issueGrid .b-card, #structureGrid .b-card, #capGrid .b-card').forEach(el=>{
+ document.querySelectorAll('#regionGrid .b-card, #issueGrid .b-card, #structureGrid .b-card').forEach(el=>{
   el.addEventListener('click',()=>{
-   const set = el.dataset.group==='region' ? regionSel : el.dataset.group==='issue' ? issueSel : el.dataset.group==='struct' ? structSel : capSel;
+   const set = el.dataset.group==='region' ? regionSel : el.dataset.group==='issue' ? issueSel : structSel;
    toggle(set, el.dataset.code, el);
   });
  });
 
  function updateSubmitState(){
-  const ok = companySel.size>0 && regionSel.size>0 && issueSel.size>0 && structSel.size>0 && capSel.size>0;
+  const ok = companySel.size>0 && regionSel.size>0 && issueSel.size>0 && structSel.size>0;
   $('#builderSubmit').disabled = !ok;
   $('#builderHint').textContent = ok ? '아래 버튼을 눌러 협력사업을 확인해보세요.' : '각 단계에서 최소 1개 이상 선택해주세요.';
  }
 
- /* ---------- 모바일 단계 이동(1/6 ~ 6/6) ---------- */
- const TOTAL_STEPS = 6;
+ /* ---------- 모바일 단계 이동(1/5 ~ 5/5) ---------- */
+ const TOTAL_STEPS = 5;
  function renderMobileStep(){
   document.querySelectorAll('.builder-step').forEach(s=>{
    s.classList.toggle('active', +s.dataset.step === currentMobileStep);
@@ -1393,12 +1359,11 @@ const CODESIGN_IDEAS = {
   if(item.region==='GLOBAL' && !regionSel.has('GLOBAL')) return -1;
   const iS = overlap([...issueSel], item.socialIssues) / issueSel.size;
   const sS = overlap([...structSel], item.structures) / structSel.size;
-  const cS = overlap([...capSel], item.impactMetrics) / capSel.size;
   const readyBonus = item.status==='READY' ? 10 : item.status==='SCALE_UP' ? 7 : item.status==='CO_DESIGN' ? 4 : 2;
   const companyBonus = item.company && item.company===selectedCompany ? 15 : 0;
   const hintBonus = item.hintCompanies && item.hintCompanies.includes(selectedCompany) ? 10 : 0;
   /* spotlight: "월드비전과 이런 것도 가능해?" 싶은 새로운 사업(기후·공급망 등)이 익숙한 사업 위로 오도록 주는 가산점 */
-  return iS*40 + sS*30 + cS*20 + readyBonus + companyBonus + hintBonus + (item.spotlight||0);
+  return iS*40 + sS*30 + readyBonus + companyBonus + hintBonus + (item.spotlight||0);
  }
  function matchReasons(item){
   const reasons=[];
@@ -1410,8 +1375,6 @@ const CODESIGN_IDEAS = {
   if(mi.length) reasons.push(`${mi.map(i=>i.label).join('·')}과 연결`);
   const ms = BUILDER_STRUCTURES.filter(s=>structSel.has(s.code) && item.structures.includes(s.code));
   if(ms.length) reasons.push(`선호하신 ${ms.map(s=>s.label).join('·')} 방식과 부합`);
-  const mc = BUILDER_CAPS.filter(c=>capSel.has(c.code) && item.impactMetrics.includes(c.code));
-  if(mc.length) reasons.push(`${mc.map(c=>c.label).join('·')} 지표로 성과 제시 가능`);
   reasons.push(`월드비전 실행 체계로 ${STATUS_LABEL[item.status]}`);
   return reasons;
  }
@@ -1449,15 +1412,13 @@ const CODESIGN_IDEAS = {
   const regionNames = BUILDER_REGIONS.filter(r=>regionSel.has(r.code)).map(r=>r.label).join(' · ');
   const issueNames = BUILDER_ISSUES.filter(i=>issueSel.has(i.code)).map(i=>i.label).join(' + ');
   const structNames = BUILDER_STRUCTURES.filter(s=>structSel.has(s.code)).map(s=>s.label).join(' · ');
-  const capNames = BUILDER_CAPS.filter(c=>capSel.has(c.code)).map(c=>c.label).join(' + ');
 
   const directText = ($('#directInput').value||'').trim();
   $('#resultRecap').innerHTML = `
    <div><b>협력 검토 멤버사</b><span>${esc(companyName)}</span></div>
    <div><b>사업 지역</b><span>${esc(regionNames)}</span></div>
    <div><b>사회문제</b><span>${esc(issueNames)}</span></div>
-   <div><b>선호 사업구조</b><span>${esc(structNames)}</span></div>
-   <div><b>중점 성과지표</b><span>${esc(capNames)}</span></div>`
+   <div><b>선호 사업구조</b><span>${esc(structNames)}</span></div>`
    + (directText ? `<div class="result-recap-note"><b>추가 요청사항</b><span>${esc(directText)}</span></div>` : '');
 
   const selectedCompanyCode = [...companySel][0];
@@ -1509,7 +1470,7 @@ const CODESIGN_IDEAS = {
  }
 
  $('#builderReset').addEventListener('click',()=>{
-  companySel.clear(); regionSel.clear(); issueSel.clear(); structSel.clear(); capSel.clear();
+  companySel.clear(); regionSel.clear(); issueSel.clear(); structSel.clear();
   $('#directInput').value = '';
   document.querySelectorAll('#builder .b-card.selected, #builder .b-chip.selected').forEach(el=>el.classList.remove('selected'));
   updateSubmitState();
@@ -1598,17 +1559,13 @@ const CODESIGN_IDEAS = {
       ${mc?`<p class="cp-outcomes-note">CSR 성과 보고 시 ${esc(mc)} 지표로 제시할 수 있습니다.</p>`:''}
      </section>
 
-     <section>
+     ${(item.refPhotos||[]).length?`<section>
       <div class="cp-section-label">FIELD REFERENCE</div>
       <h2>참고 사진</h2>
       <div class="cp-photos">
-       ${[0,1].map(i=>{
-         const p=(item.refPhotos||[])[i];
-         return p ? `<figure class="cp-photo"><span class="cp-photo-frame"><img src="${ph(p.id)}" alt=""></span><figcaption>${esc(p.caption)}</figcaption></figure>`
-                   : illustCard(item,i);
-       }).join('')}
+       ${item.refPhotos.slice(0,2).map(p=>`<figure class="cp-photo"><span class="cp-photo-frame"><img src="${ph(p.id)}" alt=""></span><figcaption>${esc(p.caption)}</figcaption></figure>`).join('')}
       </div>
-     </section>
+     </section>`:''}
 
      <div class="cp-bottom">
       <small>${company?esc(company):'SK'} × WORLD VISION</small>
@@ -1645,11 +1602,10 @@ const CODESIGN_IDEAS = {
   const regionNames = BUILDER_REGIONS.filter(r=>regionSel.has(r.code)).map(r=>r.label).join('/');
   const issueNames = BUILDER_ISSUES.filter(i=>issueSel.has(i.code)).map(i=>i.label).join('/');
   const structNames = BUILDER_STRUCTURES.filter(s=>structSel.has(s.code)).map(s=>s.label).join('/');
-  const capNames = BUILDER_CAPS.filter(c=>capSel.has(c.code)).map(c=>c.label).join('/');
   const directText = ($('#directInput').value||'').trim();
   const msgField = document.querySelector('#inquiryForm textarea');
   if(msgField){
-   msgField.value = `[협업제안 빌더에서 자동 작성]\n협력 검토 멤버사: ${companyName}\n사업 지역: ${regionNames}\n관심 사회문제: ${issueNames}\n선호 사업구조: ${structNames}\n중점 성과지표: ${capNames}\n관심 협력사업: ${item?displayTitle(item):''}`
+   msgField.value = `[협업제안 빌더에서 자동 작성]\n협력 검토 멤버사: ${companyName}\n사업 지역: ${regionNames}\n관심 사회문제: ${issueNames}\n선호 사업구조: ${structNames}\n관심 협력사업: ${item?displayTitle(item):''}`
     + (directText ? `\n추가 요청사항: ${directText}` : '');
   }
   document.getElementById('contact')?.scrollIntoView({behavior:'smooth'});
