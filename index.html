@@ -305,6 +305,11 @@ section,header.hero{scroll-margin-top:80px}
 .b-card .b-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;opacity:0;transform:scale(.6);transition:all .15s;background:#fff}
 .b-card.selected .b-check{opacity:1;transform:scale(1);background:#ff5b24;border-color:#ff5b24;color:#fff}
 .b-card{min-width:0}
+.b-card.b-logo-card{display:flex;align-items:center;justify-content:center;min-height:86px;padding:14px 16px}
+.b-card .b-logo{height:50px;width:auto;max-width:100%;object-fit:contain;display:block}
+.b-card .b-logo.wide{height:auto;width:88%}
+.b-card .b-logo.mul{mix-blend-mode:multiply}
+.b-card .b-logo-name{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .b-card .b-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;min-width:0}
 .b-card .b-icon{font-size:24px;flex:0 0 auto;line-height:1}
 .b-card b{display:block;font-size:16.5px;font-weight:800;color:var(--ink);min-width:0}
@@ -1284,12 +1289,26 @@ const CODESIGN_IDEAS = {
  'SK에코플랜트':['건설·개발 현장 인근 지역 아동친화 공간 조성','자원순환·환경 교육과 임직원 참여를 결합한 프로그램'],
 };
 
+/* STEP 01 멤버사 버튼 로고 — 각 사 공식 홈페이지 CI/브랜드 메뉴에서 받은 파일(assets/logos). 공식 파일을 확보하지 못한 회사는 텍스트 버튼 유지. mul=흰 배경 JPG 출처라 배경을 투명처럼 처리 */
+const COMPANY_LOGOS = {
+ 'SK AX':['skax.svg'],'SKC':['skc.png',1],'SK가스':['skgas.png',1],'SK네트웍스':['sknetworks.png',1],'SK디앤디':['skdnd.png',1],
+ 'SK바이오사이언스':['skbioscience.svg'],'SK바이오팜':['skbiopharm.png'],'SK브로드밴드':['skbroadband.svg'],'SK스퀘어':['sksquare.svg'],
+ 'SK실트론':['sksiltron.png'],'SK에너지':['skenergy.svg'],'SK에코플랜트':['skecoplant.png'],'SK오션플랜트':['skoceanplant.png'],'SK온':['skon.svg'],
+ 'SK이노베이션':['skinnovation.svg'],'SK지오센트릭':['skgeocentric_wings.png'],'SK케미칼':['skchemicals.png'],'SK텔레콤':['sktelecom_wings.png'],
+ 'SK팜테코':['skpharmteco.svg'],'SK하이닉스':['skhynix.png'],'티맵모빌리티':['tmap.svg',0,1]
+};
+
 (function(){
  const companySel = new Set(), regionSel = new Set(), issueSel = new Set(), structSel = new Set();
  let currentMobileStep = 1;
  let lastResults = [];
 
  function cardHTML(item, group){
+  const lg = group==='company' ? COMPANY_LOGOS[item.label] : null;
+  if(lg) return `<button type="button" class="b-card b-logo-card" data-group="${group}" data-code="${item.code}" aria-label="${esc(item.label)}">
+   <span class="b-check">✓</span>
+   <img class="b-logo${lg[1]?' mul':''}${lg[2]?' wide':''}" src="assets/logos/${lg[0]}" alt="${esc(item.label)}"><span class="b-logo-name">${esc(item.label)}</span>
+  </button>`;
   return `<button type="button" class="b-card" data-group="${group}" data-code="${item.code}">
    <span class="b-check">✓</span>
    <span class="b-head">${item.icon?`<span class="b-icon">${item.icon}</span>`:''}<b>${esc(item.label)}</b></span>
